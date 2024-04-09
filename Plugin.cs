@@ -12,7 +12,7 @@ namespace ViewRollover
     {
         public const string ModGUID = "Electric131.ViewRollover";
         public const string ModName = "ViewRollover";
-        public const string ModVersion = "1.0.1";
+        public const string ModVersion = "1.0.2";
 
         public static ManualLogSource? logger;
 
@@ -40,9 +40,12 @@ namespace ViewRollover
             int returnScore = remainingViews / newViewMultiple;
 
             logger.LogInfo("Remaining views: " + remainingViews);
-            logger.LogInfo("Transferred views: " + (returnScore * newViewMultiple));
+            logger.LogInfo("Multiplier for old day " + (instance.CurrentDay - 1) + " is: " + oldViewMultiple);
+            logger.LogInfo("Multiplier for new day " + instance.CurrentDay + " is: " + newViewMultiple);
 
             int newScore = (returnScore > 0) ? returnScore : 0; // Ensure the player doesn't get a negative score
+
+            logger.LogInfo("Transferred views: " + (newScore * newViewMultiple));
             logger.LogInfo("New score: " + newScore);
             instance.CurrentQuota = newScore;
         }

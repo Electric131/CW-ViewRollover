@@ -2,7 +2,7 @@
     "name": "ViewRollover",
     "author": "Electric131",
     "website_url": "https://github.com/Electric131/CW-ViewRollover",
-    "version_number": "1.0.1",
+    "version_number": "1.0.2",
     "description": "Keep your excess views from the previous quota",
     "dependencies": [
         "BepInEx-BepInExPack-5.4.2100"
